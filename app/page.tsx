@@ -20,12 +20,14 @@ export default function Home() {
         <Overlay heroRef={heroRef} />
       </section>
 
-      <TagScroll />
-      <AboutMeSplit />
-      <ServicesGrid />
-      <JourneyTimeline />
-      <Courses />
-      <Footer />
+      <div className="relative z-20 bg-[#0d0d0d]">
+        <TagScroll />
+        <AboutMeSplit />
+        <ServicesGrid />
+        <JourneyTimeline />
+        <Courses />
+        <Footer />
+      </div>
     </main>
   );
 }

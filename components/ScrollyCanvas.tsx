@@ -116,7 +116,7 @@ export default function ScrollyCanvas({ heroRef }: ScrollyCanvasProps) {
   });
 
   return (
-    <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#0d0d0d]">
+    <div className="sticky top-0 h-[100svh] w-full overflow-hidden bg-[#0d0d0d]">
       {!hasLoadedAll && (
         <div className="absolute inset-0 flex items-center justify-center bg-[#0d0d0d] z-20">
           <p className="text-white text-xl md:text-2xl font-light tracking-widest">

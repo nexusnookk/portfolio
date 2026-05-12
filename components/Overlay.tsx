@@ -32,11 +32,11 @@ export default function Overlay({ heroRef }: OverlayProps) {
   const overlayOpacity = useTransform(scrollYProgress, [0.95, 1], [1, 0]);
 
   return (
-    <motion.div className="fixed inset-0 z-10 pointer-events-none flex items-center justify-center h-[100svh]" style={{ opacity: overlayOpacity, willChange: "opacity, transform" }}>
+    <motion.div className="fixed inset-0 z-10 pointer-events-none flex items-center justify-center h-[100svh]" style={{ opacity: overlayOpacity, willChange: "opacity, transform", backfaceVisibility: "hidden" }}>
       {/* PHASE 1 */}
       <motion.div
         className="absolute w-full text-center flex items-center justify-center"
-        style={{ opacity: opacityP1, willChange: "opacity, transform" }}
+        style={{ opacity: opacityP1, willChange: "opacity, transform", backfaceVisibility: "hidden" }}
       >
         <h1
           className="text-white opacity-10 font-black"
@@ -49,7 +49,7 @@ export default function Overlay({ heroRef }: OverlayProps) {
       {/* PHASE 2 */}
       <motion.div
         className="absolute w-full flex flex-col items-center justify-center text-center px-4"
-        style={{ opacity: opacityP2, y: yP2, willChange: "opacity, transform" }}
+        style={{ opacity: opacityP2, y: yP2, willChange: "opacity, transform", backfaceVisibility: "hidden" }}
       >
         <p className="text-sm md:text-base text-gray-400 mb-2 uppercase tracking-widest">
           Digital Marketing · Web Development · E-commerce
@@ -71,7 +71,7 @@ export default function Overlay({ heroRef }: OverlayProps) {
       {/* PHASE 3 */}
       <motion.div
         className="absolute w-full flex items-center justify-center text-center px-4"
-        style={{ opacity: opacityP3, y: yP3, willChange: "opacity, transform" }}
+        style={{ opacity: opacityP3, y: yP3, willChange: "opacity, transform", backfaceVisibility: "hidden" }}
       >
         <h2
           className="text-white font-bold leading-tight"
@@ -88,7 +88,7 @@ export default function Overlay({ heroRef }: OverlayProps) {
       {/* PHASE 4 */}
       <motion.div
         className="absolute w-full flex flex-col items-center justify-center text-center px-4"
-        style={{ opacity: opacityP4, y: yP4, willChange: "opacity, transform" }}
+        style={{ opacity: opacityP4, y: yP4, willChange: "opacity, transform", backfaceVisibility: "hidden" }}
       >
         <h2
           className="text-white font-bold leading-tight mb-6"
