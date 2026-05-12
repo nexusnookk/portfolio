@@ -12,8 +12,8 @@ const config: Config = {
         accent: "#ff6b35",
       },
       animation: {
-        "scroll-left": "scroll-left 25s linear infinite",
-        "scroll-right": "scroll-right 25s linear infinite",
+        "scroll-left": "scroll-left 15s linear infinite",
+        "scroll-right": "scroll-right 15s linear infinite",
       },
       keyframes: {
         "scroll-left": {

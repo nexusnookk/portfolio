@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <main>
-      <section ref={heroRef} className="relative h-[500vh]">
+      <section ref={heroRef} className="relative h-[500vh] overflow-hidden">
         <ScrollyCanvas heroRef={heroRef} />
         <Overlay heroRef={heroRef} />
       </section>

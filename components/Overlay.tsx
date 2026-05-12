@@ -17,8 +17,8 @@ export default function Overlay({ heroRef }: OverlayProps) {
   const opacityP1 = useTransform(scrollYProgress, [0, 0.1, 0.18, 0.28], [1, 1, 1, 0]);
 
   // PHASE 2: Name Intro Block (0.28 -> 0.52)
-  const opacityP2 = useTransform(scrollYProgress, [0.28, 0.38, 0.44, 0.52], [0, 1, 1, 0]);
-  const yP2 = useTransform(scrollYProgress, [0.28, 0.52], [60, -60]);
+  const opacityP2 = useTransform(scrollYProgress, [0.28, 0.34, 0.40, 0.46], [0, 1, 1, 0]);
+  const yP2 = useTransform(scrollYProgress, [0.28, 0.46], [30, -30]);
 
   // PHASE 3: Role Statement (0.52 -> 0.78)
   const opacityP3 = useTransform(scrollYProgress, [0.52, 0.62, 0.7, 0.78], [0, 1, 1, 0]);
@@ -29,8 +29,10 @@ export default function Overlay({ heroRef }: OverlayProps) {
   const opacityP4 = useTransform(scrollYProgress, [0.78, 0.88, 0.96, 1.0], [0, 1, 1, 0]);
   const yP4 = useTransform(scrollYProgress, [0.78, 1.0], [40, -40]);
 
+  const overlayOpacity = useTransform(scrollYProgress, [0.95, 1], [1, 0]);
+
   return (
-    <div className="fixed inset-0 z-10 pointer-events-none flex items-center justify-center">
+    <motion.div className="fixed inset-0 z-10 pointer-events-none flex items-center justify-center h-[100svh]" style={{ opacity: overlayOpacity, willChange: "opacity, transform" }}>
       {/* PHASE 1 */}
       <motion.div
         className="absolute w-full text-center flex items-center justify-center"
