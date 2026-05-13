@@ -1,17 +1,13 @@
 "use client";
 
 import React from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { MotionValue, useTransform, motion } from "framer-motion";
 
 interface OverlayProps {
-  heroRef: React.RefObject<HTMLDivElement>;
+  scrollYProgress: MotionValue<number>;
 }
 
-export default function Overlay({ heroRef }: OverlayProps) {
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end end"],
-  });
+export default function Overlay({ scrollYProgress }: OverlayProps) {
 
   // PHASE 1: Ghost Watermark (0.00 -> 0.28)
   const opacityP1 = useTransform(scrollYProgress, [0, 0.1, 0.18, 0.28], [1, 1, 1, 0]);

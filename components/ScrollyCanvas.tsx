@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { MotionValue, useTransform, useMotionValueEvent } from "framer-motion";
 
 interface ScrollyCanvasProps {
-  heroRef: React.RefObject<HTMLDivElement>;
+  scrollYProgress: MotionValue<number>;
 }
 
 const FRAME_COUNT = 45;
@@ -15,16 +15,11 @@ const generateFrameUrls = () => {
   );
 };
 
-export default function ScrollyCanvas({ heroRef }: ScrollyCanvasProps) {
+export default function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [loadedCount, setLoadedCount] = useState(0);
   const [hasLoadedAll, setHasLoadedAll] = useState(false);
-
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end end"],
-  });
 
   const currentFrameIndex = useTransform(scrollYProgress, [0, 1], [0, FRAME_COUNT - 1]);
 
