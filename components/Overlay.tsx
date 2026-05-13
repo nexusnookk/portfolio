@@ -104,6 +104,6 @@ export default function Overlay({ heroRef }: OverlayProps) {
           SEO · E-commerce · Automation · Creative Development
         </p>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
